@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="testbench_alu_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="testbench_alu" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="72722fs"></ZoomEndTime>
+      <Cursor1Time time="947662fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="130"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="22" />
+   <wvobject fp_name="/testbench_alu/i_clk" type="logic">
+      <obj_property name="ElementShortName">i_clk</obj_property>
+      <obj_property name="ObjectShortName">i_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench_alu/i_enable" type="array">
+      <obj_property name="ElementShortName">i_enable[2:0]</obj_property>
+      <obj_property name="ObjectShortName">i_enable[2:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench_alu/i_switch" type="array">
+      <obj_property name="ElementShortName">i_switch[7:0]</obj_property>
+      <obj_property name="ObjectShortName">i_switch[7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench_alu/o_led" type="array">
+      <obj_property name="ElementShortName">o_led[7:0]</obj_property>
+      <obj_property name="ObjectShortName">o_led[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench_alu/o_carry_bit" type="logic">
+      <obj_property name="ElementShortName">o_carry_bit</obj_property>
+      <obj_property name="ObjectShortName">o_carry_bit</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench_alu/NB_OP" type="array">
+      <obj_property name="ElementShortName">NB_OP[31:0]</obj_property>
+      <obj_property name="ObjectShortName">NB_OP[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench_alu/NB_IN" type="array">
+      <obj_property name="ElementShortName">NB_IN[31:0]</obj_property>
+      <obj_property name="ObjectShortName">NB_IN[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench_alu/NB_OUT" type="array">
+      <obj_property name="ElementShortName">NB_OUT[31:0]</obj_property>
+      <obj_property name="ObjectShortName">NB_OUT[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench_alu/NB_IN_ENABLE" type="array">
+      <obj_property name="ElementShortName">NB_IN_ENABLE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">NB_IN_ENABLE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench_alu/I_CLK" type="logic">
+      <obj_property name="ElementShortName">I_CLK</obj_property>
+      <obj_property name="ObjectShortName">I_CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench_alu/I_ENABLE" type="array">
+      <obj_property name="ElementShortName">I_ENABLE[2:0]</obj_property>
+      <obj_property name="ObjectShortName">I_ENABLE[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench_alu/I_DATA_A" type="array">
+      <obj_property name="ElementShortName">I_DATA_A[7:0]</obj_property>
+      <obj_property name="ObjectShortName">I_DATA_A[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench_alu/I_DATA_B" type="array">
+      <obj_property name="ElementShortName">I_DATA_B[7:0]</obj_property>
+      <obj_property name="ObjectShortName">I_DATA_B[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench_alu/I_OPERATION" type="array">
+      <obj_property name="ElementShortName">I_OPERATION[5:0]</obj_property>
+      <obj_property name="ObjectShortName">I_OPERATION[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench_alu/ADD" type="array">
+      <obj_property name="ElementShortName">ADD[5:0]</obj_property>
+      <obj_property name="ObjectShortName">ADD[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench_alu/SUB" type="array">
+      <obj_property name="ElementShortName">SUB[5:0]</obj_property>
+      <obj_property name="ObjectShortName">SUB[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench_alu/AND" type="array">
+      <obj_property name="ElementShortName">AND[5:0]</obj_property>
+      <obj_property name="ObjectShortName">AND[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench_alu/OR" type="array">
+      <obj_property name="ElementShortName">OR[5:0]</obj_property>
+      <obj_property name="ObjectShortName">OR[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench_alu/XOR" type="array">
+      <obj_property name="ElementShortName">XOR[5:0]</obj_property>
+      <obj_property name="ObjectShortName">XOR[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench_alu/SRA" type="array">
+      <obj_property name="ElementShortName">SRA[5:0]</obj_property>
+      <obj_property name="ObjectShortName">SRA[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench_alu/SRL" type="array">
+      <obj_property name="ElementShortName">SRL[5:0]</obj_property>
+      <obj_property name="ObjectShortName">SRL[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench_alu/NOR" type="array">
+      <obj_property name="ElementShortName">NOR[5:0]</obj_property>
+      <obj_property name="ObjectShortName">NOR[5:0]</obj_property>
+   </wvobject>
+</wave_config>
