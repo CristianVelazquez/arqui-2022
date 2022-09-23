@@ -12,12 +12,12 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="72722fs"></ZoomEndTime>
-      <Cursor1Time time="947662fs"></Cursor1Time>
+      <ZoomEndTime time="88479fs"></ZoomEndTime>
+      <Cursor1Time time="55000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="130"></ValueColumnWidth>
+      <ValueColumnWidth column_width="126"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="22" />
    <wvobject fp_name="/testbench_alu/i_clk" type="logic">
@@ -32,7 +32,7 @@
    <wvobject fp_name="/testbench_alu/i_switch" type="array">
       <obj_property name="ElementShortName">i_switch[7:0]</obj_property>
       <obj_property name="ObjectShortName">i_switch[7:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench_alu/o_led" type="array">
       <obj_property name="ElementShortName">o_led[7:0]</obj_property>

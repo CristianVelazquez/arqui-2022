@@ -106,7 +106,7 @@ module testbench_alu;
         i_switch = 8'b0;
     end
    
-    always #5 i_clk = ~i_clk;
+    always #1 i_clk = ~i_clk;
     
     always@(posedge i_clk) begin
      case(i_switch)
