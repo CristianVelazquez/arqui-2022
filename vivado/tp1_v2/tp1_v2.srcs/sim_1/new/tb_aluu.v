@@ -9,7 +9,8 @@ module testbench_alu;
  
     localparam I_CLK        =       1'b0;
     localparam I_ENABLE     =       3'b000;         
-    localparam I_OPERATION  =       6'b0;   // 0
+    localparam I_DATA_A     = 8'b1;   // 1    
+    localparam I_DATA_B     = 8'b10;  // 2    
  
     localparam ADD          =       6'b100000; //(20)
     localparam SUB          =       6'b100010; //(22)
@@ -26,8 +27,8 @@ module testbench_alu;
     reg                             i_clk;
     reg [NB_IN_ENABLE -1 : 0]       i_enable;
     reg [NB_IN - 1 :0]              i_switch;
-    reg [NB_IN - 1 :0]              I_DATA_A;
-    reg [NB_IN - 1 :0]              I_DATA_B;
+    //reg [NB_IN - 1 :0]              I_DATA_A;
+    //reg [NB_IN - 1 :0]              I_DATA_B;
     //Outputs
     wire  [NB_OUT - 1 : 0]          o_led;
     wire                            o_carry_bit;
@@ -47,110 +48,131 @@ module testbench_alu;
         i_clk        = I_CLK;
         i_enable     = I_ENABLE;
         i_switch     = 8'b0;
-        I_DATA_A     = 8'b0;
-        I_DATA_B     = 8'b0;
-        #10
-        I_DATA_A = $urandom();
-        I_DATA_B = $urandom();
-        #10
+        //I_DATA_A     = 8'b0;
+        //I_DATA_B     = 8'b0;
+        //#10
+        //I_DATA_A = $urandom();
+        //I_DATA_B = $urandom();
+        #20
         i_switch  = I_DATA_A;
-        #10
+        #20
         i_enable[0]   = 1;
-        #10
+        #20
         i_enable[0]   = 0;
         i_switch  = I_DATA_B;
         i_enable[1]   = 1;
-        #10
+        
+        #20
         i_enable[1]   = 0;
-        i_switch  = ADD; // Addition 50
+        i_switch  = ADD; // Addition 80
         i_enable[2]   = 1;
-        #10
+        $display("#######################################################");
+        $display("ADD code operation = %b %h (hexa)",i_switch,i_switch);
+        #20
         //i_switch  = 8'b0;
         i_enable[2]   = 0;
-        #10
-        i_switch  = SUB; //70
+        $display("ADD result = %b ",o_led);
+        if(o_led == 8'b11)
+         $display("test operation ADD correct!");
+        else
+         $display("test ADD fail");
+        
+        #20
+        i_switch  = SUB; //120
         i_enable[2]   = 1;
-        #10
+        $display("#######################################################");
+        $display("SUB code operation = %b %h (hexa)",i_switch,i_switch);
+        #20
         i_enable[2]   = 0;
-        #10
-        i_switch  = AND; //90
+        $display("SUB result = %b ",o_led);
+        if(o_led == 8'b11111111)
+            $display("test operation SUB correct!");
+        else
+            $display("test operation SUB fail");
+        
+        #20
+        i_switch  = AND; //160
         i_enable[2]   = 1;
-        #10
+        $display("#######################################################");
+        $display("AND code operation = %b %h (hexa)",i_switch,i_switch);
+        #20
         i_enable[2]   = 0;
-        #10 
-        i_switch  = OR; //110
+        $display("AND result = %b ",o_led);
+          if(o_led == 8'b0)
+            $display("test operation AND correct!");
+        else
+            $display("test operation AND fail");
+        
+        #20
+        i_switch  = OR; //200
         i_enable[2]   = 1;
-        #10
+        $display("#######################################################");
+        $display("OR code operation = %b %h (hexa)",i_switch,i_switch);
+        #20
         i_enable[2]   = 0;
-        #10;
-        i_switch  = XOR; //130
+        $display("OR result = %b (decimal)",o_led);
+        if(o_led == 8'b11)
+            $display("test operation OR correct!");
+        else
+            $display("test operation OR fail");
+        
+        #20;
+        i_switch  = XOR; //240
         i_enable[2]   = 1;
-        #10
+        $display("#######################################################");
+        $display("XOR code operation = %b %h (hexa)",i_switch,i_switch);
+        #20
         i_enable[2]   = 0;
-        #10     
-        i_switch  = SRA; //150
+        $display("XOR result = %b (decimal)",o_led);
+        if(o_led == 8'b11)
+            $display("test operation XOR correct!");
+        else
+            $display("test operation XOR fail");
+        
+        #20  
+        i_switch  = SRA; //280
         i_enable[2]   = 1;
-        #10
+        $display("#######################################################");
+        $display("SRA code operation = %b %h (hexa)",i_switch,i_switch);
+        #20
         i_enable[2]   = 0;
-        #10
-        i_switch  = SRL; //170
+        $display("SRA result = %b ",o_led);
+        if(o_led == 8'b0)
+            $display("test operation SRA correct!");
+        else
+            $display("test operation SRA fail");
+        
+        #20
+        i_switch  = SRL; //320
         i_enable[2]   = 1;
-        #10
+        $display("#######################################################");
+        $display("SRL code operation = %b %h (hexa)",i_switch,i_switch);
+        #20
         i_enable[2]   = 0;
-        #10
-        i_switch  = NOR; //190
+         $display("SRL result = %b (decimal)",o_led);
+        if(o_led == 8'b0)
+            $display("test operation SRL correct!");
+        else
+            $display("test operation SRL fail");
+        
+        #20
+        i_switch  = NOR; //360
         i_enable[2]   = 1;
-        #10
+        $display("#######################################################");
+        $display("NOR code operation = %b %h (hexa)",i_switch,i_switch);
+        #20
         i_enable[2]   = 0;
-        #10
+        $display("NOR result = %b (decimal)",o_led);
+        if(o_led == 8'b11111100)
+            $display("test operation SRL correct!");
+        else
+            $display("test operation NOR fail");
+        #20
+        $display("#######################################################");
         i_switch = 8'b0;
     end
    
-    always #1 i_clk = ~i_clk;
-    
-    always@(posedge i_clk) begin
-     case(i_switch)
-      ADD:
-        if(o_led == I_DATA_A + I_DATA_B)
-          $display(" ADD CORRECTO ");
-      else 
-        $display(" VALOR INCORRECTO ");
-      SUB:
-        if(o_led == I_DATA_A - I_DATA_B)
-        $display(" SUB CORRECTO ");
-      else 
-        $display(" VALOR INCORRECTO ");
-       AND:
-       if(o_led == (I_DATA_A & I_DATA_B))
-        $display(" AND CORRECTO ");
-      else 
-        $display(" VALOR INCORRECTO ");
-        OR:
-        if(o_led == I_DATA_A | I_DATA_B)
-        $display(" OR CORRECTO ");
-      else 
-        $display(" VALOR INCORRECTO ");
-        XOR:
-        if(o_led == I_DATA_A ^ I_DATA_B)
-        $display(" XOR CORRECTO ");
-      else 
-        $display(" VALOR INCORRECTO ");
-        SRA:
-         if(o_led == I_DATA_A >>> I_DATA_B)
-        $display(" SRA CORRECTO ");
-      else 
-        $display(" VALOR INCORRECTO ");
-        SRL:
-         if(o_led == I_DATA_A >> I_DATA_B)
-        $display(" SRL CORRECTO ");
-      else 
-        $display(" VALOR INCORRECTO ");
-        NOR:
-         if(o_led == ~(I_DATA_A | I_DATA_B))
-        $display(" NOR CORRECTO ");
-      else 
-        $display(" VALOR INCORRECTO ");
-        
-      endcase
+    always begin #5 i_clk = ~i_clk;
+            
     end
   endmodule

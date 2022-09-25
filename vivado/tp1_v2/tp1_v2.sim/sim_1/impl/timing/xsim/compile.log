@@ -1,0 +1,5 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/arqui_2020/git/arqui-2022/vivado/tp1_v2/tp1_v2.sim/sim_1/impl/timing/xsim/testbench_alu_time_impl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/arqui_2020/git/arqui-2022/vivado/tp1_v2/tp1_v2.srcs/sim_1/new/tb_aluu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testbench_alu

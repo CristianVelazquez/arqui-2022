@@ -12,14 +12,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="88479fs"></ZoomEndTime>
-      <Cursor1Time time="55000fs"></Cursor1Time>
+      <ZoomEndTime time="108240fs"></ZoomEndTime>
+      <Cursor1Time time="5604fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="175"></NameColumnWidth>
-      <ValueColumnWidth column_width="126"></ValueColumnWidth>
+      <ValueColumnWidth column_width="122"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="22" />
+   <WVObjectSize size="21" />
    <wvobject fp_name="/testbench_alu/i_clk" type="logic">
       <obj_property name="ElementShortName">i_clk</obj_property>
       <obj_property name="ObjectShortName">i_clk</obj_property>
@@ -32,7 +32,7 @@
    <wvobject fp_name="/testbench_alu/i_switch" type="array">
       <obj_property name="ElementShortName">i_switch[7:0]</obj_property>
       <obj_property name="ObjectShortName">i_switch[7:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench_alu/o_led" type="array">
       <obj_property name="ElementShortName">o_led[7:0]</obj_property>
@@ -66,6 +66,7 @@
    <wvobject fp_name="/testbench_alu/I_ENABLE" type="array">
       <obj_property name="ElementShortName">I_ENABLE[2:0]</obj_property>
       <obj_property name="ObjectShortName">I_ENABLE[2:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench_alu/I_DATA_A" type="array">
       <obj_property name="ElementShortName">I_DATA_A[7:0]</obj_property>
@@ -76,10 +77,6 @@
       <obj_property name="ElementShortName">I_DATA_B[7:0]</obj_property>
       <obj_property name="ObjectShortName">I_DATA_B[7:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench_alu/I_OPERATION" type="array">
-      <obj_property name="ElementShortName">I_OPERATION[5:0]</obj_property>
-      <obj_property name="ObjectShortName">I_OPERATION[5:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/testbench_alu/ADD" type="array">
       <obj_property name="ElementShortName">ADD[5:0]</obj_property>
