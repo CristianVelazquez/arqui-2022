@@ -1,0 +1,35 @@
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+#######################################################
+ADD code operation = 00100000 20 (hexa)
+ADD result = 00000011 
+test operation ADD correct!
+#######################################################
+SUB code operation = 00100010 22 (hexa)
+SUB result = 11111111 
+test operation SUB correct!
+#######################################################
+AND code operation = 00100100 24 (hexa)
+AND result = 00000000 
+test operation AND correct!
+#######################################################
+OR code operation = 00100101 25 (hexa)
+OR result = 00000011 (decimal)
+test operation OR correct!
+#######################################################
+XOR code operation = 00100110 26 (hexa)
+XOR result = 00000011 (decimal)
+test operation XOR correct!
+#######################################################
+SRA code operation = 00000011 03 (hexa)
+SRA result = 00000000 
+test operation SRA correct!
+#######################################################
+SRL code operation = 00000010 02 (hexa)
+SRL result = 00000000 (decimal)
+test operation SRL correct!
+#######################################################
+NOR code operation = 00100111 27 (hexa)
+NOR result = 11111100 (decimal)
+test operation SRL correct!
+#######################################################

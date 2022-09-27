@@ -1,0 +1,22 @@
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+#######################################################
+ADD code operation = 00100000 20 (hexa)
+ADD result = 00000000 
+ADD result = 00000000 
+test ADD fail
+#######################################################
+SUB code operation = 00100010 22 (hexa)
+SUB result = 00000000 
+SUB result = 00000000 
+test operation SUB fail
+#######################################################
+AND code operation = 00100100 24 (hexa)
+AND result = 00000000 
+AND result = 00000000 
+test operation AND correct!
+#######################################################
+OR code operation = 00100101 25 (hexa)
+OR result = 00000000 (decimal)
+OR result = 00000000 (decimal)
+test operation OR fail

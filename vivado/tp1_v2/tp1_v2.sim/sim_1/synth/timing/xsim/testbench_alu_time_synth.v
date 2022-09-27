@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Sun Sep 25 17:57:30 2022
+// Date        : Mon Sep 26 21:14:50 2022
 // Host        : DESKTOP-1TGLUUV running 64-bit major release  (build 9200)
 // Command     : write_verilog -mode timesim -nolib -sdf_anno true -force -file
 //               E:/arqui_2020/git/arqui-2022/vivado/tp1_v2/tp1_v2.sim/sim_1/synth/timing/xsim/testbench_alu_time_synth.v

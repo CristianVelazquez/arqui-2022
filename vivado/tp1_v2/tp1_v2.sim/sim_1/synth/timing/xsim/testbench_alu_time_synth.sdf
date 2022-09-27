@@ -1,7 +1,7 @@
 (DELAYFILE 
 (SDFVERSION "3.0" )
 (DESIGN "alu")
-(DATE "Sun Sep 25 17:57:30 2022")
+(DATE "Mon Sep 26 21:14:50 2022")
 (VENDOR "XILINX")
 (PROGRAM "Vivado")
 (VERSION "2019.2")
@@ -295,7 +295,7 @@
   (DELAY 
     (PATHPULSE (50.0))
     (ABSOLUTE 
-      (IOPATH I O (1388.0:1458.4:1458.4) (1388.0:1458.4:1458.4))
+      (IOPATH I O (810.0:943.4:943.4) (810.0:943.4:943.4))
     )
   )
 )
@@ -305,7 +305,7 @@
   (DELAY 
     (PATHPULSE (50.0))
     (ABSOLUTE 
-      (IOPATH I O (1371.1:1441.3:1441.3) (1371.1:1441.3:1441.3))
+      (IOPATH I O (1380.9:1451.1:1451.1) (1380.9:1451.1:1451.1))
     )
   )
 )
@@ -315,7 +315,7 @@
   (DELAY 
     (PATHPULSE (50.0))
     (ABSOLUTE 
-      (IOPATH I O (1383.5:1453.8:1453.8) (1383.5:1453.8:1453.8))
+      (IOPATH I O (1371.1:1441.3:1441.3) (1371.1:1441.3:1441.3))
     )
   )
 )
