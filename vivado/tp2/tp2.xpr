@@ -31,7 +31,7 @@
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSABoardId" Val="basys3"/>
-    <Option Name="WTXSimLaunchSim" Val="0"/>
+    <Option Name="WTXSimLaunchSim" Val="1"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -60,29 +60,37 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../../../TP1-ARQUI/TP2/RX.v">
+      <File Path="$PSRCDIR/sources_1/imports/TP2/RX.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../TP1-ARQUI/TP2/RX.v"/>
+          <Attr Name="ImportTime" Val="1661911950"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../TP1-ARQUI/TP2/TX.v">
+      <File Path="$PSRCDIR/sources_1/imports/TP2/TX.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../TP1-ARQUI/TP2/TX.v"/>
+          <Attr Name="ImportTime" Val="1661911950"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../TP1-ARQUI/TP2/baudGen.v">
+      <File Path="$PSRCDIR/sources_1/imports/TP2/baudGen.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../TP1-ARQUI/TP2/baudGen.v"/>
+          <Attr Name="ImportTime" Val="1661911950"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../TP1-ARQUI/TP2/UART.v">
+      <File Path="$PSRCDIR/sources_1/imports/TP2/UART.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../TP1-ARQUI/TP2/UART.v"/>
+          <Attr Name="ImportTime" Val="1661911950"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -102,40 +110,50 @@
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../../../TP1-ARQUI/TP2/tb_RX.v">
+      <File Path="$PSRCDIR/sim_1/imports/TP2/tb_RX.v">
         <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../TP1-ARQUI/TP2/tb_RX.v"/>
+          <Attr Name="ImportTime" Val="1661911950"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../TP1-ARQUI/TP2/TX.v">
+      <File Path="$PSRCDIR/sim_1/imports/TP2/TX.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../TP1-ARQUI/TP2/TX.v"/>
+          <Attr Name="ImportTime" Val="1661911950"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../TP1-ARQUI/TP2/tb_baudGen.v">
+      <File Path="$PSRCDIR/sim_1/imports/TP2/tb_baudGen.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../TP1-ARQUI/TP2/tb_baudGen.v"/>
+          <Attr Name="ImportTime" Val="1661911950"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../TP1-ARQUI/TP2/tb_TX.v">
+      <File Path="$PSRCDIR/sim_1/imports/TP2/tb_TX.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../TP1-ARQUI/TP2/tb_TX.v"/>
+          <Attr Name="ImportTime" Val="1661911950"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../TP1-ARQUI/TP2/tb_UART.v">
+      <File Path="$PSRCDIR/sim_1/imports/TP2/tb_UART.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../TP1-ARQUI/TP2/tb_UART.v"/>
+          <Attr Name="ImportTime" Val="1661911950"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
