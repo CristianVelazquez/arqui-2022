@@ -61,7 +61,7 @@ initial begin
     //$dumpfile("dump.vcd"); $dumpvars;
     i_clk       = 1'b0;
     i_reset     = 1'b1;
-    i_data      = 8'b10111010;  //data = 3A
+    i_data      = 8'b10111011;  //data = bb
     i_tx_start  = 1'b0;
     salida_aux  = 8'b00000000;
     counterTicks= 4'b0000;
@@ -75,8 +75,10 @@ initial begin
     #40
     i_tx_start  = 1'b1;
     
+    #40000
+    i_tx_start = 1'b0; 
     
-    #60000
+    #1041670
     i_clk       = 1'b0;
 
 
@@ -94,11 +96,20 @@ always @(posedge i_clk) begin
     end
     
     if (counterTicks == 0 && i_tick) begin
-        salida_aux = salida_aux << 1;
-        salida_aux[0] = o_tx;
+        salida_aux = salida_aux >> 1; //desplazo 1 a la izquierda para concatenar las salidas en el reg salida_aux
+        salida_aux[7] = o_tx;
 //        counterBits = counterBits +1;
     end
-    
+//    if (o_tx_done_tick) begin  
+//      if (salida_aux == i_data) begin
+//        $display("**********Test Aceptado ");
+//       // $finish();
+//      end
+//      else begin
+//        $display("**********Test Fallo %b", salida_aux);
+//        //$finish();
+//      end
+//   end
 //    if (counterBits == 11 && i_tick) begin
 //        $finish();
 //    end
@@ -107,12 +118,12 @@ end
 always  @(posedge o_tx_done_tick) begin
     if (salida_aux == i_data) begin
         $display("**********Test Aceptado");
-       // $finish();
+//       // $finish();
     end
     else begin
         $display("**********Test Fallo");
-        //$finish();
-    end
+//        //$finish();
+   end
 end
 
 

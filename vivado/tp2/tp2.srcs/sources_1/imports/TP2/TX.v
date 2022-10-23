@@ -62,7 +62,7 @@ module TX
             tx_reg          <= 1;
         end 
         else begin  
-            state_reg       <= state_next;    ///Esto no puede traer problemas de concurrencia?
+            state_reg       <= state_next;   
             tickCounter_reg <= tickCounter_next;  
             bitCounter_reg  <= bitCounter_next;  
             buffer_reg      <= buffer_next; 
@@ -111,7 +111,7 @@ always @(*) begin
                     if(tickCounter_reg == (SB_TICK-1)) begin      // Si es igual a 15 la se?al indica que se calibro.
                         tickCounter_next = 4'b0000;               // Reinicio TickCounter.
                         buffer_next = buffer_reg >> 1;            // Desplazo buffer_reg a la derecha y lo asigno a buffer_next.
-                        if(bitCounter_reg == (NB_DATA - 1)) begin           // Si es igual a 8 es porque ya envie todos los bits de ->
+                        if(bitCounter_reg == (NB_DATA - 1)) begin           // Si es igual a 7 es porque ya envie todos los bits de ->
                                 bitCounter_next = 4'b0000;
                                 state_next = STOP;      // datos, por lo que paso al estado de STOP.
                         end

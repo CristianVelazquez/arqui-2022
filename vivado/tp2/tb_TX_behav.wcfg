@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_TX_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_TX" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="51606720fs"></ZoomStartTime>
+      <ZoomEndTime time="51844861fs"></ZoomEndTime>
+      <Cursor1Time time="54390000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="98"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="17" />
+   <wvobject fp_name="/tb_TX/i_clk" type="logic">
+      <obj_property name="ElementShortName">i_clk</obj_property>
+      <obj_property name="ObjectShortName">i_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_TX/i_reset" type="logic">
+      <obj_property name="ElementShortName">i_reset</obj_property>
+      <obj_property name="ObjectShortName">i_reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_TX/i_tx_start" type="logic">
+      <obj_property name="ElementShortName">i_tx_start</obj_property>
+      <obj_property name="ObjectShortName">i_tx_start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_TX/i_data" type="array">
+      <obj_property name="ElementShortName">i_data[7:0]</obj_property>
+      <obj_property name="ObjectShortName">i_data[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_TX/salida_aux" type="array">
+      <obj_property name="ElementShortName">salida_aux[7:0]</obj_property>
+      <obj_property name="ObjectShortName">salida_aux[7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_TX/i_tick" type="logic">
+      <obj_property name="ElementShortName">i_tick</obj_property>
+      <obj_property name="ObjectShortName">i_tick</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_TX/o_tx_done_tick" type="logic">
+      <obj_property name="ElementShortName">o_tx_done_tick</obj_property>
+      <obj_property name="ObjectShortName">o_tx_done_tick</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_TX/o_tx" type="logic">
+      <obj_property name="ElementShortName">o_tx</obj_property>
+      <obj_property name="ObjectShortName">o_tx</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_TX/counterTicks" type="array">
+      <obj_property name="ElementShortName">counterTicks[3:0]</obj_property>
+      <obj_property name="ObjectShortName">counterTicks[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_TX/counterBits" type="array">
+      <obj_property name="ElementShortName">counterBits[3:0]</obj_property>
+      <obj_property name="ObjectShortName">counterBits[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_TX/NB_DATA" type="array">
+      <obj_property name="ElementShortName">NB_DATA[31:0]</obj_property>
+      <obj_property name="ObjectShortName">NB_DATA[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_TX/SB_TICK" type="array">
+      <obj_property name="ElementShortName">SB_TICK[31:0]</obj_property>
+      <obj_property name="ObjectShortName">SB_TICK[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_TX/BAUD_RATE" type="array">
+      <obj_property name="ElementShortName">BAUD_RATE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">BAUD_RATE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_TX/CLK_FREC" type="array">
+      <obj_property name="ElementShortName">CLK_FREC[31:0]</obj_property>
+      <obj_property name="ObjectShortName">CLK_FREC[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_TX/u_TX/tickCounter_reg" type="array">
+      <obj_property name="ElementShortName">tickCounter_reg[3:0]</obj_property>
+      <obj_property name="ObjectShortName">tickCounter_reg[3:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_TX/u_TX/state_reg" type="array">
+      <obj_property name="ElementShortName">state_reg[2:0]</obj_property>
+      <obj_property name="ObjectShortName">state_reg[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_TX/u_TX/bitCounter_reg" type="array">
+      <obj_property name="ElementShortName">bitCounter_reg[3:0]</obj_property>
+      <obj_property name="ObjectShortName">bitCounter_reg[3:0]</obj_property>
+   </wvobject>
+</wave_config>

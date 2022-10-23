@@ -2,7 +2,11 @@
 2019.2
 Nov  6 2019
 21:57:16
-E:/arqui_2020/git/TP1-ARQUI/TP2/RX.v,1661911950,verilog,,E:/arqui_2020/git/TP1-ARQUI/TP2/baudGen.v,,RX,,,,,,,,
-E:/arqui_2020/git/TP1-ARQUI/TP2/baudGen.v,1661911950,verilog,,E:/arqui_2020/git/TP1-ARQUI/TP2/tb_RX.v,,baudGen,,,,,,,,
-E:/arqui_2020/git/TP1-ARQUI/TP2/tb_RX.v,1661911950,verilog,,,,tb_RX,,,,,,,,
 E:/arqui_2020/git/arqui-2022/vivado/tp2/tp2.sim/sim_1/behav/xsim/glbl.v,1573089660,verilog,,,,glbl,,,,,,,,
+E:/arqui_2020/git/arqui-2022/vivado/tp2/tp2.srcs/sim_1/imports/TP2/tb_RX.v,1661911950,verilog,,,,tb_RX,,,,,,,,
+E:/arqui_2020/git/arqui-2022/vivado/tp2/tp2.srcs/sim_1/imports/TP2/tb_TX.v,1666568187,verilog,,,,tb_TX,,,,,,,,
+E:/arqui_2020/git/arqui-2022/vivado/tp2/tp2.srcs/sim_1/imports/TP2/tb_UART.v,1661911950,verilog,,,,tb_UART,,,,,,,,
+E:/arqui_2020/git/arqui-2022/vivado/tp2/tp2.srcs/sources_1/imports/TP2/RX.v,1661911950,verilog,,E:/arqui_2020/git/arqui-2022/vivado/tp2/tp2.srcs/sources_1/imports/TP2/TX.v,,RX,,,,,,,,
+E:/arqui_2020/git/arqui-2022/vivado/tp2/tp2.srcs/sources_1/imports/TP2/TX.v,1666567275,verilog,,E:/arqui_2020/git/arqui-2022/vivado/tp2/tp2.srcs/sources_1/imports/TP2/baudGen.v,,TX,,,,,,,,
+E:/arqui_2020/git/arqui-2022/vivado/tp2/tp2.srcs/sources_1/imports/TP2/UART.v,1661911950,verilog,,E:/arqui_2020/git/arqui-2022/vivado/tp2/tp2.srcs/sources_1/imports/TP2/baudGen.v,,UART,,,,,,,,
+E:/arqui_2020/git/arqui-2022/vivado/tp2/tp2.srcs/sources_1/imports/TP2/baudGen.v,1661911950,verilog,,E:/arqui_2020/git/arqui-2022/vivado/tp2/tp2.srcs/sim_1/imports/TP2/tb_TX.v,,baudGen,,,,,,,,

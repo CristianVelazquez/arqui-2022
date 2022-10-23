@@ -26,3 +26,5 @@ import_files
 INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sim_1'
 INFO: [filemgmt 20-334] All file(s) are already imported in fileset: 'sources_1'
 INFO: [filemgmt 20-348] Importing the appropriate files for fileset: 'sources_1'
+exit
+INFO: [Common 17-206] Exiting Vivado at Wed Oct  5 20:57:42 2022...
