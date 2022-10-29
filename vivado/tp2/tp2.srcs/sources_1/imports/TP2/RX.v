@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 19.10.2021 17:15:42
+// Create Date: 28.10.2022 17:15:42
 // Design Name: 
-// Module Name: TX
+// Module Name: RX
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -14,7 +14,7 @@
 // Dependencies: 
 // 
 // Revision:
-// Revision 0.01 - File Created
+// Revision 0.02 - File Created
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
@@ -22,7 +22,7 @@
 
 module RX
 #( 
-    parameter                  NB_DATA     = 9,       // Numero de bits del dato
+    parameter                  NB_DATA     = 8,       // Numero de bits del dato
     parameter                  SB_TICK     = 16       // Ticks for stop bits  
 )
 (
@@ -30,7 +30,7 @@ module RX
     input wire                  i_clk,
     input wire                  i_reset,
     input wire                  i_rx,
-    input wire                  i_tick,                // Entrada de BRGenerator
+    input wire                  i_tick,                
     
     // OUTPUTS
     output reg                  o_rx_done_tick,
@@ -38,92 +38,99 @@ module RX
 );
 
     // LOCAL_PARAMETERS
-    localparam                  IDLE        = 2'b00;
-    localparam                  START       = 2'b01;
-    localparam                  DATA        = 2'b10;
-    localparam                  STOP        = 2'b11;
+    localparam  [1:0]   IDLE        = 2'b00;
+    localparam  [1:0]   START       = 2'b01;
+    localparam  [1:0]   DATA        = 2'b10;
+    localparam  [1:0]   STOP        = 2'b11;
     
     // INTERNAL
-    reg         [3:0]           state_reg   = IDLE;
-    reg         [3:0]           state_next  = START;
-    reg         [3:0]           tickCounter_reg, tickCounter_next;         // Contador s: TickCounter (del BRGenerator)
-    reg         [3:0]           bitCounter_reg, bitCounter_next;         // Contador n: mantiene la cuenta de los bits recibidos
-    reg         [NB_DATA-1:0]   buffer_reg, buffer_next;
+    reg         [1:0]   state_reg;
+    reg         [1:0]   state_next;
+    reg         [3:0]   tickCounter_reg, tickCounter_next;
+    reg         [2:0]   bitCounter_reg, bitCounter_next;
+    reg         [7:0]   buffer_reg, buffer_next;
 
     // MEMORY
-    always @(posedge i_clk, posedge i_reset) begin
-        if (i_reset)  begin  
-            state_reg       <= IDLE;  
-            tickCounter_reg <= 0;  
-            bitCounter_reg  <= 4'b0000;  
-            buffer_reg      <= 0;  
-        end 
-        else begin  
-            state_reg       <= state_next;
-            tickCounter_reg <= tickCounter_next;  
-            bitCounter_reg  <= bitCounter_next;  
-            buffer_reg      <= buffer_next;  
-        end 
-    end
+    always @(posedge i_clk, posedge i_reset)
+        if (i_reset)  
+            begin  
+                state_reg       <= IDLE;  
+                tickCounter_reg <= 0;  
+                bitCounter_reg  <= 0;  
+                buffer_reg      <= 0;  
+            end 
+        else 
+            begin  
+                state_reg       <= state_next;
+                tickCounter_reg <= tickCounter_next;  
+                bitCounter_reg  <= bitCounter_next;  
+                buffer_reg      <= buffer_next;  
+            end 
+    
 
-    always @(*) begin    
+    always @* 
+    begin    
         state_next = state_reg;
-        o_rx_done_tick = 1'b0;                          // Reseteo el flag DONE (valid).
+        o_rx_done_tick = 1'b0;                          
         tickCounter_next = tickCounter_reg;
         bitCounter_next = bitCounter_reg;
         buffer_next = buffer_reg;
     
         case(state_reg)
-            IDLE:                                       // IDLE_STATE:
-                if(i_rx == 1'b0) begin                  // Verifico si llega el bit de START
-                    state_next = START;                 // Paso al siguiente estado
-                    tickCounter_next = 4'b0000;                   // Reinicio TickCounter
-                end
-
-            START:                                      // START_STATE:
-                if(i_tick == 1)                         // Entro cada vez que llega un tick del BRGenerator
-                    if(tickCounter_reg == (NB_DATA-1)) begin      // Si es igual a 7, la se?al de entrada esta en el punto ->
-                        state_next = DATA;              // medio del bit de START. Paso al sig. estado START.
-                        tickCounter_next = 4'b0000;               // Reinicio TickCounter
-                        bitCounter_next = 4'b0000;                // Reinicio el contador de bits recibidos
-                    end    
-                    else                                // En caso de que TickCounter no haya llegado a '7'      ->
-                        tickCounter_next = tickCounter_reg + 1;             // lo incremento. (Para que se ubique a la mitad del bit)
-                        
-            DATA:                                       // DATA_STATE:
-                if(i_tick == 1)                         // Entro cada vez que llega un tick del BRGenerator
-                    if(tickCounter_reg == (SB_TICK-1)) begin      // Si es igual a 15 la se?al de entrada esta en el punto ->
-                        tickCounter_next = 4'b0000;               // medio del primer bit de datos. Reinicio TickCounter y ->
-                        buffer_next = {i_rx, buffer_reg[NB_DATA-1 : 1]}; // y almaceno el dato de entrada en un shift-reg. 
-                        if(bitCounter_reg == (NB_DATA-1)) begin   // Si es igual a 7 es porque ya recibi todos los bits de ->
-                            bitCounter_reg = 4'b0000;
-                            state_next = STOP;          // datos, por lo que paso al estado de STOP.
-                        end
-                        else                            // En caso que no haya llegado, incremento el contador de->
-                            bitCounter_next = bitCounter_reg + 1;         // bits recibidos.
-                        end
-                    else                                // En caso de que TickCounter no haya llegado a '15'     ->
-                        tickCounter_next = tickCounter_reg + 1;             // lo incremento. (Para que se ubique a la mitad del bit)
-
-            STOP:                                       // STOP_STATE:
-                if(i_tick == 1)                         // Entro cada vez que llega un tick del BRGenerator
-                    if(tickCounter_reg == (SB_TICK-1)) begin      // Si es igual a 15 la se?al de entrada esta en el punto ->
-                        state_next = IDLE;              // medio del bit de STOP. Paso al estado IDLE.
-                        o_rx_done_tick = 1'b1;          // Pongo el alto el flag DONE.
+            IDLE:                                       
+                if(~i_rx) 
+                    begin                  
+                        state_next = START;                 
+                        tickCounter_next = 0;                   
                     end
-                    else                                // En caso de que TickCounter no haya llegado a '15'     ->
-                        tickCounter_next = tickCounter_reg + 1;             // lo incremento. (Para que se ubique a la mitad del bit)
+
+            START:                                      
+                if(i_tick)                         
+                    if(tickCounter_reg == 7) 
+                        begin      
+                            state_next = DATA;              
+                            tickCounter_next = 0;               
+                            bitCounter_next = 0;                
+                        end    
+                    else                                
+                        tickCounter_next = tickCounter_reg + 1;             
+
                         
+            DATA:                                       
+                if(i_tick)                         
+                    if(tickCounter_reg == 15) 
+                        begin      
+                            tickCounter_next = 0;               
+                            buffer_next = {i_rx, buffer_reg [7:1]}; 
+                            if(bitCounter_reg == (NB_DATA-1))
+                                state_next = STOP;          
+                            else                            
+                                bitCounter_next = bitCounter_reg + 1;         
+                        end
+                    else                                
+                        tickCounter_next = tickCounter_reg + 1;             
+
+
+            STOP:                                       
+                if(i_tick)                         
+                    if(tickCounter_reg == (SB_TICK-1)) 
+                        begin      
+                            state_next = IDLE;              
+                            o_rx_done_tick = 1'b1;          
+                        end
+                    else                                
+                        tickCounter_next = tickCounter_reg + 1;             
+
             default : begin                             // DEFAULT: Fault Recovery
-                state_next       = IDLE;                      // Vuelvo al estado IDLE.
-                tickCounter_next = 0;                               // Reinicio TickCounter.
-                bitCounter_next  = 4'b0000;                               // Reinicio contador de bits recibidos.
-                buffer_next      = 0;                               // Reinicio buffer de datos recibidos.
+                state_next       = IDLE;                // Vuelvo al estado IDLE.
+                tickCounter_next = 0;                   // Reinicio TickCounter.
+                bitCounter_next  = 4'b0000;             // Reinicio contador de bits recibidos.
+                buffer_next      = 0;                   // Reinicio buffer de datos recibidos.
             end                 
         endcase
     end
     
     // OUTPUT
-    assign o_data = buffer_reg;                              // Asigno el buffer de datos recibidos a la salida
+    assign o_data = buffer_reg;                              
 
 endmodule
